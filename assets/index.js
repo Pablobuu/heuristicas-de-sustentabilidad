@@ -1,3 +1,10 @@
+const tooltipTriggerList = document.querySelectorAll(
+  '[data-bs-toggle="tooltip"]'
+);
+const tooltipList = [...tooltipTriggerList].map(
+  (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
+);
+
 const ctx = document.getElementById("myChart");
 
 new Chart(ctx, {
@@ -6,13 +13,13 @@ new Chart(ctx, {
     labels: ["Red", "Blue", "Yellow", "Green"],
     datasets: [
       {
-        label: "# of Votes",
-        data: [12, 19, 3, 5],
-        borderWidth: 1,
+        label: "Cumplimiento",
+        data: [1, 2, 3, 4, 5],
       },
     ],
   },
   options: {
     responsive: true,
+    angle: 90,
   },
 });
